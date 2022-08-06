@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  html {
+  body { background-color: #efefef; }
+
+  * {
     font-family: 'Space Grotesk', sans-serif;
-    color: #112b3c;
+    @apply text-custom-indigo;
   }
 }
