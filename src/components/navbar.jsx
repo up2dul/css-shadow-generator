@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import clsx from 'clsx';
-import { configNavLinks as links } from '../configs/nav-links';
+import { configNavLinks as links } from '@/configs/nav-links';
 
 export const Navbar = () => (
   <nav className='mb-8'>
