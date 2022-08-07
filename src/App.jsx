@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import { Header, Navbar } from './components';
+import { Footer, Header, Navbar } from './components';
 import { BoxShadow, NotFound, TextShadow } from './pages';
 
 const App = () => (
   <>
-    <Header />
     <BrowserRouter>
+      <Header />
       <Navbar />
       <Routes>
         <Route
@@ -17,6 +17,7 @@ const App = () => (
         <Route path='/text-shadow' element={<TextShadow />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   </>
 );
