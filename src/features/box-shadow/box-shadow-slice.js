@@ -6,7 +6,7 @@ const initialState = {
   vOffset: 10,
   blur: 5,
   spread: 0,
-  color: 'rgba(0,0,0,0.7)',
+  color: 'rgba(0, 0, 0, 0.7)',
 }
 
 const boxShadowSlice = createSlice({
@@ -14,11 +14,18 @@ const boxShadowSlice = createSlice({
   initialState,
   reducers: {
     changeValue: (state, action) => {
-      const { name, newValue } = action;
-      const newVal = { [name]: newValue }
-      return {...state, newVal}
+      const { name, newValue } = action.payload;
+      state[name] = parseInt(newValue);
+      return state;
+    },
+    changeColor: (state, action) => {
+      const { newColor } = action.payload;
+      state.color = newColor;
+      return state;
     }
   }
 });
+
+export const { changeValue, changeColor } = boxShadowSlice.actions; 
 
 export default boxShadowSlice.reducer;

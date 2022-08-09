@@ -1,33 +1,35 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { changeValue } from '@/features/box-shadow/box-shadow-slice';
+import { useDispatch } from 'react-redux';
 
-export const Slider = ({ name, sliderValue, onSliderChange }) => {
+export const Slider = ({ shadowType, name, text, sliderValue }) => {
   const [inputValue, setInputValue] = useState(sliderValue);
+  const dispatch = useDispatch();
 
-  const handleChange = (e) => {
-    setInputValue(e.target.value);
-    onSliderChange(sliderValue);
-  }
+  useEffect(() => {
+    if (shadowType === 'box') dispatch(changeValue({ name, newValue: inputValue }));
+  }, [inputValue]);
 
   return (
     <div>
       <div className='flex justify-between'>
-        <label>{name} (px)</label>
+        <label>{text} (px)</label>
         <input
           type='number'
-          min='-100'
+          min={name === 'blur' ? '0' : '-100'}
           max='100'
           className='w-16 px-1 ml-5 border-solid border-2 border-custom-turquoise rounded-md'
           value={inputValue}
-          onChange={handleChange}
+          onInput={(e) => setInputValue(e.target.value)}
         />
       </div>
       <input
         type='range'
-        min='-100'
+        min={name === 'blur' ? '0' : '-100'}
         max='100'
         className='block w-full mt-1'
         value={inputValue}
-        onChange={handleChange}
+        onInput={(e) => setInputValue(e.target.value)}
       />
     </div>
   );

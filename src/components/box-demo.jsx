@@ -14,10 +14,8 @@ export const BoxDemo = () => {
 
   return (
     <div 
-      className='p-32 bg-custom-turquoise rounded-md'
-      style={{
-        boxShadow: boxShadowResult
-      }}
+      className='p-32 bg-custom-turquoise'
+      style={{ boxShadow: boxShadowResult }}
     >
     </div>
   );
