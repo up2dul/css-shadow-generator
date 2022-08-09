@@ -10,12 +10,11 @@ export const BoxShadow = () => (
         <BoxDemo />
       </div>
       <div className='flex flex-col gap-8'>
-        {boxSliders.map(({ name, defaultValue, unit }, idx) => (
+        {boxSliders.map(({ name, defaultValue }, idx) => (
           <Slider
             key={idx}
             name={name}
             sliderValue={defaultValue}
-            unit={unit}
             // onSliderChange={}
           />
         ))}

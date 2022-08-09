@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const Slider = ({ name, sliderValue, unit, onSliderChange }) => {
+export const Slider = ({ name, sliderValue, onSliderChange }) => {
   const [inputValue, setInputValue] = useState(sliderValue);
 
   const handleChange = (e) => {
@@ -11,7 +11,7 @@ export const Slider = ({ name, sliderValue, unit, onSliderChange }) => {
   return (
     <div>
       <div className='flex justify-between'>
-        <label>{name} ({unit})</label>
+        <label>{name} (px)</label>
         <input
           type='number'
           min='-100'
