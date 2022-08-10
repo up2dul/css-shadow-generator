@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import toast, { Toaster } from 'react-hot-toast';
 import { isZeroPX } from '@/utils';
 import { Container } from '@/layouts';
 import { copyToClipboard } from '@/utils';
@@ -16,6 +17,14 @@ export const BoxResult = () => {
 
   const boxShadowResult = `box-shadow: ${isZeroPX(hOffset)} ${isZeroPX(vOffset)} ${isZeroPX(blur)} ${isZeroPX(spread)} ${color};`;
 
+  const buttonCopyHandle = () => {
+    copyToClipboard(boxShadowResult);
+    toast('Code copied to clipboard!', {
+      duration: 4000,
+      position: 'bottom-right',
+    });
+  }
+
   return (
     <div className='mt-8 text-center'>
       <h1 className='mb-4 text-2xl font-bold'>CSS Result</h1>
@@ -24,7 +33,8 @@ export const BoxResult = () => {
           {boxShadowResult}
         </p>
       </Container>
-      <Button handleClick={() => copyToClipboard(boxShadowResult)}>Copy code!</Button>
+      <Button handleClick={buttonCopyHandle}>Copy code!</Button>
+      <Toaster />
     </div>
   );
 }
