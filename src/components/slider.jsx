@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { changeValue } from '@/features/box-shadow/box-shadow-slice';
 import { useDispatch } from 'react-redux';
+import { changeValue } from '@/features/box-shadow/box-shadow-slice';
 
 export const Slider = ({ shadowType, name, text, sliderValue }) => {
   const [inputValue, setInputValue] = useState(sliderValue);
@@ -20,7 +20,7 @@ export const Slider = ({ shadowType, name, text, sliderValue }) => {
           max='100'
           className='w-16 px-1 ml-5 border-solid border-2 border-custom-turquoise rounded-md'
           value={inputValue}
-          onInput={(e) => setInputValue(e.target.value)}
+          onInput={({ target }) => setInputValue(target.value)}
         />
       </div>
       <input
@@ -29,7 +29,7 @@ export const Slider = ({ shadowType, name, text, sliderValue }) => {
         max='100'
         className='block w-full mt-1'
         value={inputValue}
-        onInput={(e) => setInputValue(e.target.value)}
+        onInput={({ target }) => setInputValue(target.value)}
       />
     </div>
   );
