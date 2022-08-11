@@ -2,12 +2,13 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import toast, { Toaster } from 'react-hot-toast';
 import { isZeroPX } from '@/utils';
-import { Container } from '@/layouts';
 import { copyToClipboard } from '@/utils';
+import { Container } from '@/layouts';
 import { Button } from './button';
 
 export const BoxResult = () => {
   const { 
+    inset,
     hOffset, 
     vOffset, 
     blur, 
@@ -15,11 +16,11 @@ export const BoxResult = () => {
     color 
   } = useSelector((state) => state.boxShadow);
 
-  const boxShadowResult = `box-shadow: ${isZeroPX(hOffset)} ${isZeroPX(vOffset)} ${isZeroPX(blur)} ${isZeroPX(spread)} ${color};`;
+  const codeResult = `box-shadow: ${inset ? 'inset' : ''} ${isZeroPX(hOffset)} ${isZeroPX(vOffset)} ${isZeroPX(blur)} ${isZeroPX(spread)} ${color};`;
 
   const buttonCopyHandle = () => {
-    copyToClipboard(boxShadowResult);
-    toast('Code copied to clipboard!', {
+    copyToClipboard(codeResult);
+    toast.success('Code copied to clipboard!', {
       duration: 4000,
       position: 'bottom-right',
     });
@@ -30,7 +31,7 @@ export const BoxResult = () => {
       <h1 className='mb-4 text-2xl font-bold'>CSS Result</h1>
       <Container>
         <p className='text-left font-mono'>
-          {boxShadowResult}
+          {codeResult}
         </p>
       </Container>
       <Button handleClick={buttonCopyHandle}>Copy code!</Button>
