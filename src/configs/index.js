@@ -1,2 +1,2 @@
 export * from './nav-links';
-export * from './box-sliders';
+export * from './slider-options';
