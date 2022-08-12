@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  hOffset: 10,
-  vOffset: 10,
-  blur: 5,
+  hOffset: 8,
+  vOffset: 5,
+  blur: 10,
   color: 'rgba(0, 0, 0, 0.7)',
 }
 

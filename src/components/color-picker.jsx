@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RgbaStringColorPicker } from 'react-colorful';
-import { changeColor } from '@/features/box-shadow/box-shadow-slice';
+import { changeColor as setBoxColor } from '@/features/box-shadow/box-shadow-slice';
+import { changeColor as setTextColor } from '@/features/text-shadow/text-shadow-slice';
 
-export const ColorPicker = () => {
-  const { color: firstColor } = useSelector((state) => state.boxShadow);
-  const [color, setColor] = useState(firstColor);
+export const ColorPicker = ({ shadowType }) => {
+  const { color: initColor } = useSelector((state) => state.boxShadow);
+  const [color, setColor] = useState(initColor);
   const [isShowPicker, setIsShowPicker] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(changeColor({ newColor: color }))
+    if (shadowType === 'box') dispatch(setBoxColor({ newColor: color }))
+    else if (shadowType === 'text') dispatch(setTextColor({ newColor: color }));
   }, [color]);
 
   const togglePicker = () => setIsShowPicker(!isShowPicker);

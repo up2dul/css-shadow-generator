@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { changeValue } from '@/features/box-shadow/box-shadow-slice';
+import { changeValue as setBox } from '@/features/box-shadow/box-shadow-slice';
+import { changeValue as setText } from '@/features/text-shadow/text-shadow-slice';
 
 export const Slider = ({ shadowType, name, text, sliderValue }) => {
   const [inputValue, setInputValue] = useState(sliderValue);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (shadowType === 'box') dispatch(changeValue({ name, newValue: inputValue }));
+    if (shadowType === 'box') dispatch(setBox({ name, newValue: inputValue }))
+    else if (shadowType === 'text') dispatch(setText({ name, newValue: inputValue }));
   }, [inputValue]);
 
   return (
