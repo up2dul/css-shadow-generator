@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Container } from '@/layouts';
-import { BoxDemo, CodeResult, ColorPicker, Slider } from '@/components';
+import { BoxDemo, CodeResult, ColorPicker, Inset, Slider } from '@/components';
 import { configSliders as sliders } from '@/configs';
 
 export const BoxShadow = () => {
@@ -11,6 +11,7 @@ export const BoxShadow = () => {
     <>
       <Container isFlex>
         <div>
+          <Inset />
           <BoxDemo />
           <ColorPicker shadowType='box' />
         </div>

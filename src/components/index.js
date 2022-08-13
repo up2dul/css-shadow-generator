@@ -1,6 +1,7 @@
 export * from './header';
 export * from './navbar';
 export * from './slider';
+export * from './inset';
 export * from './box-demo';
 export * from './text-demo';
 export * from './color-picker';
