@@ -5,7 +5,9 @@ import { changeColor as setBoxColor } from '@/features/box-shadow/box-shadow-sli
 import { changeColor as setTextColor } from '@/features/text-shadow/text-shadow-slice';
 
 export const ColorPicker = ({ shadowType }) => {
-  const { color: initColor } = useSelector((state) => state.boxShadow);
+  const { color: initBoxColor } = useSelector((state) => state.boxShadow);
+  const { color: initTextColor } = useSelector((state) => state.textShadow);
+  const initColor = shadowType === 'box' ? initBoxColor : initTextColor;
   const [color, setColor] = useState(initColor);
   const [isShowPicker, setIsShowPicker] = useState(false);
   const dispatch = useDispatch();
