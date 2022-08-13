@@ -13,6 +13,11 @@ const boxShadowSlice = createSlice({
   name: 'box-shadow',
   initialState,
   reducers: {
+    changeInset: (state, action) => {
+      const { newValue } = action.payload;
+      state.inset = newValue;
+      return state;
+    },
     changeValue: (state, action) => {
       const { name, newValue } = action.payload;
       state[name] = parseInt(newValue);
@@ -26,6 +31,6 @@ const boxShadowSlice = createSlice({
   }
 });
 
-export const { changeValue, changeColor } = boxShadowSlice.actions; 
+export const { changeInset, changeValue, changeColor } = boxShadowSlice.actions; 
 
 export default boxShadowSlice.reducer;
