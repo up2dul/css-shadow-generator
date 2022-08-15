@@ -14,8 +14,7 @@ const boxShadowSlice = createSlice({
   initialState,
   reducers: {
     changeInset: (state, action) => {
-      const { newValue } = action.payload;
-      state.inset = newValue;
+      state.inset = action.payload.newValue;
       return state;
     },
     changeValue: (state, action) => {
