@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  body { background-color: #efefef; }
+  body { @apply bg-light }
 
   * {
     font-family: 'Space Grotesk', sans-serif;
-    @apply text-custom-indigo;
+    @apply text-dark;
   }
 }

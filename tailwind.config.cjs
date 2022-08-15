@@ -4,8 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'custom-indigo': '#112b3c',
-        'custom-turquoise': '#205375',
+        'primary': '#205375',
+        'dark': '#112b3c',
+        'light': '#efefef',
       }
     },
   },
