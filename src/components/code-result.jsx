@@ -32,7 +32,7 @@ export const CodeResult = ({ shadowType }) => {
     }
   }
 
-  const buttonCopyHandle = () => {
+  const handleCopy = () => {
     copy(result());
     toast.success('Code copied to clipboard!', {
       duration: 4000,
@@ -48,7 +48,7 @@ export const CodeResult = ({ shadowType }) => {
           {result()}
         </p>
       </Container>
-      <Button handleClick={buttonCopyHandle}>
+      <Button handleClick={handleCopy}>
         <FaCopy className='fill-white inline mr-2' />
         Copy code!
       </Button>

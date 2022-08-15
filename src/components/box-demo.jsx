@@ -15,7 +15,7 @@ export const BoxDemo = () => {
 
   return (
     <div 
-      className='p-32 bg-custom-turquoise'
+      className='my-6 p-32 bg-primary'
       style={{ boxShadow: codeResult }}
     >
     </div>
