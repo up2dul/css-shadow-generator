@@ -1,8 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { FaCopy } from 'react-icons/fa';
 import toast, { Toaster } from 'react-hot-toast';
+import { copyToClipboard as copy } from '@/utils';
 import { isZeroPX as zPX } from '@/utils';
-import { copyToClipboard } from '@/utils';
 import { Container } from '@/layouts';
 import { Button } from './button';
 
@@ -19,7 +20,7 @@ export const CodeResult = ({ shadowType }) => {
         spread, 
         color 
       } = boxShadow;
-      return `box-shadow: ${inset ? 'inset' : ''} ${zPX(hOffset)} ${zPX(vOffset)} ${zPX(blur)} ${zPX(spread)} ${color};`
+      return `box-shadow:${inset ? ' inset' : ''} ${zPX(hOffset)} ${zPX(vOffset)} ${zPX(blur)} ${zPX(spread)} ${color};`
     } else if (shadowType === 'text') {
       const { 
         hOffset, 
@@ -32,7 +33,7 @@ export const CodeResult = ({ shadowType }) => {
   }
 
   const buttonCopyHandle = () => {
-    copyToClipboard(result());
+    copy(result());
     toast.success('Code copied to clipboard!', {
       duration: 4000,
       position: 'bottom-right',
@@ -47,7 +48,10 @@ export const CodeResult = ({ shadowType }) => {
           {result()}
         </p>
       </Container>
-      <Button handleClick={buttonCopyHandle}>Copy code!</Button>
+      <Button handleClick={buttonCopyHandle}>
+        <FaCopy className='fill-white inline mr-2' />
+        Copy code!
+      </Button>
       <Toaster />
     </div>
   );
