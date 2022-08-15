@@ -6,6 +6,7 @@ import { copyToClipboard as copy } from '@/utils';
 import { isZeroPX as zPX } from '@/utils';
 import { Container } from '@/layouts';
 import { Button } from './button';
+import PropTypes from 'prop-types';
 
 export const CodeResult = ({ shadowType }) => {
   const { boxShadow, textShadow } = useSelector((state) => state);
@@ -55,4 +56,8 @@ export const CodeResult = ({ shadowType }) => {
       <Toaster />
     </div>
   );
+}
+
+CodeResult.propTypes = {
+  shadowType: PropTypes.oneOf(['box', 'text']).isRequired,
 }

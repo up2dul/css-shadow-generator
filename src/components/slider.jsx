@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { changeValue as setBox } from '@/features/box-shadow/box-shadow-slice';
 import { changeValue as setText } from '@/features/text-shadow/text-shadow-slice';
+import PropTypes from 'prop-types';
 
 export const Slider = ({ shadowType, name, text, sliderValue }) => {
   const [inputValue, setInputValue] = useState(sliderValue);
@@ -38,4 +39,11 @@ export const Slider = ({ shadowType, name, text, sliderValue }) => {
       />
     </div>
   );
+}
+
+Slider.propTypes = {
+  shadowType: PropTypes.oneOf(['box', 'text']).isRequired,
+  name: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  sliderValue: PropTypes.number.isRequired,
 }

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RgbaStringColorPicker as CPicker } from 'react-colorful';
 import { changeColor as setBoxColor } from '@/features/box-shadow/box-shadow-slice';
 import { changeColor as setTextColor } from '@/features/text-shadow/text-shadow-slice';
+import PropTypes from 'prop-types';
 
 export const ColorPicker = ({ shadowType }) => {
   const { color: initBoxColor } = useSelector((state) => state.boxShadow);
@@ -36,4 +37,8 @@ export const ColorPicker = ({ shadowType }) => {
       }
     </div>
   );
+}
+
+ColorPicker.propTypes = {
+  shadowType: PropTypes.oneOf(['box', 'text']).isRequired,
 }
