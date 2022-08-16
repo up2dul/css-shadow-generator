@@ -7,4 +7,5 @@ export * from './text-demo';
 export * from './color-picker';
 export * from './code-result';
 export * from './button';
+export * from './button-theme';
 export * from './footer';

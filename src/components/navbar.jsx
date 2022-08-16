@@ -12,7 +12,7 @@ export const Navbar = () => (
             <li
               className={clsx(
                 'text-xl z-10 decoration-2 hover:opacity-80',
-                isActive ? 'text-primary font-bold underline'
+                isActive ? 'text-primary dark:text-light font-bold underline'
                 : 'hover:underline hover:decoration-dashed'
               )}
             >

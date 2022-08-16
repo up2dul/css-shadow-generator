@@ -3,10 +3,12 @@
 @tailwind utilities;
 
 @layer base {
-  body { @apply bg-light }
+  body { @apply bg-light dark:bg-dark }
 
   * {
     font-family: 'Space Grotesk', sans-serif;
-    @apply text-dark;
+    @apply text-dark dark:text-light;
   }
+
+  input { @apply dark:text-dark }
 }

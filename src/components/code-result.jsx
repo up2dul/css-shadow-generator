@@ -38,6 +38,10 @@ export const CodeResult = ({ shadowType }) => {
     toast.success('Code copied to clipboard!', {
       duration: 4000,
       position: 'bottom-right',
+      style: { 
+        backgroundColor: '#205375',
+        color: '#efefef',
+      },
     });
   }
 
