@@ -8,7 +8,7 @@ export const TextDemo = () => {
 
   return (
     <h1
-      className='my-6 text-primary text-center text-6xl md:text-7xl xl:text-8xl font-bold'
+      className='my-6 text-primary dark:text-light text-center text-6xl md:text-7xl xl:text-8xl font-bold'
       style={{ textShadow: codeResult }}
     >
       preview text
