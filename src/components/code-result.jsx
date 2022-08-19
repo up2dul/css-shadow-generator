@@ -53,7 +53,7 @@ export const CodeResult = ({ shadowType }) => {
           {result()}
         </p>
       </Container>
-      <Button handleClick={handleCopy}>
+      <Button title='Copy code to clipboard' handleClick={handleCopy}>
         <FaCopy className='fill-white inline mr-2' />
         Copy code!
       </Button>

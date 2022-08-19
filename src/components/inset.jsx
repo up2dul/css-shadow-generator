@@ -21,6 +21,7 @@ export const Inset = () => {
         id='inset-checkbox'
         type='checkbox'
         defaultChecked={inset}
+        title='Toggle box shadow inset'
         className='text-primary cursor-pointer rounded'
         onClick={handleCheck}
       />
