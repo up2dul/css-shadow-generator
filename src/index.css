@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  body { @apply bg-light dark:bg-dark }
+  body { @apply bg-light dark:bg-dark transition-colors }
 
   * {
     font-family: 'Space Grotesk', sans-serif;
