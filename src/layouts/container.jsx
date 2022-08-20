@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
 
 export const Container = ({ children, isFlex }) => (
   <div
@@ -12,3 +13,7 @@ export const Container = ({ children, isFlex }) => (
     {children}
   </div>
 );
+
+Container.propTypes = {
+  isFlex: PropTypes.bool,
+}
