@@ -19,8 +19,9 @@ export const Slider = ({ shadowType, name, text, sliderValue }) => {
   return (
     <div>
       <div className='flex justify-between'>
-        <label>{text} (px)</label>
+        <label htmlFor={name}>{text} (px)</label>
         <input
+          id={name}
           type='number'
           min={name === 'blur' ? '0' : '-100'}
           max='100'
